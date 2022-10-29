@@ -101,8 +101,8 @@ function randomizer() {
 
 function scoreUpdate(argElement, argUpdate) {
     console.log('scoreUpdate - uruchomiony!');
-    console.log('scoreUpdate - win: ' + win);
-    console.log('scoreUpdate - argUpdate: ' + argUpdate);
+    // console.log('scoreUpdate - win: ' + win);
+    // console.log('scoreUpdate - argUpdate: ' + argUpdate);
     let divWin = document.getElementById(argElement);
     divWin.textContent = argUpdate;
 }
