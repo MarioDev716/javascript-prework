@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Papier, Kamień, Nożyce - my first simple game.</title>
-    <link rel="stylesheet" href="css/background.css">
     <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -14,14 +13,20 @@
     <div class="container buttons-space">
         <div class="scores">
             <table>
-                <th>Wygrane</th>
-                <th>Remisy</th>
-                <th>Przegrane</th>
-                <tr>
-                    <td id="win">0</td>
-                    <td id="draw">0</td>
-                    <td id="defeat">0</td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th scope="col">Wygrane</th>
+                        <th scope="col">Remisy</th>
+                        <th scope="col">Przegrane</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="win">0</td>
+                        <td id="draw">0</td>
+                        <td id="defeat">0</td>
+                    </tr>
+                </tbody>
             </table>
         </div>
         <div class="wrapper">
@@ -32,9 +37,9 @@
             </div>
             <h1>Papier, Kamień, Nożyce</h1>
             <div id="buttons">
-                <button id="button-rock">Kamień</button>
-                <button id="button-paper">Papier</button>
-                <button id="button-scissors">Nożyce</button>
+                <button id="button-rock" type="button">Kamień</button>
+                <button id="button-paper" type="button">Papier</button>
+                <button id="button-scissors" type="button">Nożyce</button>
             </div>
             <div id="messages">
                 <div>Witaj - spróbuj szczęścia ...</div>
@@ -43,24 +48,6 @@
     </div>
     <div class="description">Created by Mario</div>
 
-    <!-- Animated background. Source: https://speckyboy.com/css-javascript-animated-backgrounds/ -->
-
-    <div class="area">
-        <ul class="circles">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </div>
-
-    <!-- <script src="js/script.js"></script> -->
     <script src="js/functions.js"></script>
     <script src="js/buttons.js"></script>
 </body>

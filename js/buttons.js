@@ -1,6 +1,6 @@
 //Deklaracja zmiennych
 
-var buttonRock;
+let buttonRock;
 
 // Funkcja akcji przycisków.
 
