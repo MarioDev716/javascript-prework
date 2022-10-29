@@ -26,7 +26,7 @@ function buttonClicked(argButtonName) {
     // console.log('buttonClicked - argButtonName: ' + argButtonName);
     // console.log('buttonClicked - argComputerMove: ' + argComputerMove);
     displayResult(argButtonName, argComputerMove);
-    // scoreUpdate();
+    // scoreUpdate('test');
 }
 
 // Zamiana wyniku losowania na zmienną tekstową
@@ -51,8 +51,8 @@ function displayResult(argPlayerMove, argComputerMove) {
         argWi++; 
         // argWi = win;
         console.log('displayResult1 - argWi: ' + argWi);
-        console.log('displayResult - win: ' + win);
-        scoreUpdate(argWi);
+        // console.log('displayResult - win: ' + win);
+        scoreUpdate('win', argWi);
 
     } else if (argPlayerMove == 'kamień' && argComputerMove == 'nożyce') {
         printMessage('Wygrywasz!');
@@ -60,24 +60,28 @@ function displayResult(argPlayerMove, argComputerMove) {
         argWi++;
         // argWi = win;
         console.log('displayResult2 - argWi: ' + argWi);
-        console.log('displayResult - win: ' + win);
+        // console.log('displayResult - win: ' + win);
+        scoreUpdate('win', argWi);
     } else if (argPlayerMove == 'nożyce' && argComputerMove == 'papier') {
         printMessage('Wygrywasz!');
         // console.log('Wygrywasz');
         argWi++;
         // argWi = win;
         console.log('displayResult3 - argWi: ' + argWi);
-        console.log('displayResult - win: ' + win);
+        // console.log('displayResult - win: ' + win);
+        scoreUpdate('win', argWi);
     } else if (false) {} else if (argPlayerMove == argComputerMove) {
         printMessage('Remis!');
         // console.log('Remis');
         argDr++;
         console.log('displayResult - argDr: ' + argDr);
+        scoreUpdate('draw', argDr);
     } else {
         printMessage('Przegrywasz');
         // console.log('Przegrywasz');
         argDe++;
         console.log('displayResult - argDe: ' + argDe);
+        scoreUpdate('defeat', argDe);
     }
     // clearMessages();
     printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
@@ -95,10 +99,10 @@ function randomizer() {
     // console.log('randomizer - argComputerMove: ' + argComputerMove);
 }
 
-function scoreUpdate(argUpdate) {
+function scoreUpdate(argElement, argUpdate) {
     console.log('scoreUpdate - uruchomiony!');
     console.log('scoreUpdate - win: ' + win);
     console.log('scoreUpdate - argUpdate: ' + argUpdate);
-    let divWin = document.getElementById('win');
-    divWin.innerHTML == argUpdate;
+    let divWin = document.getElementById(argElement);
+    divWin.textContent = argUpdate;
 }
