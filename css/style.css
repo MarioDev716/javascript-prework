@@ -1,0 +1,293 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
+* {
+  font-family: "Roboto";
+  font-weight: 300;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #390099;
+  background: linear-gradient(332deg, rgb(89, 0, 238) 0%, rgb(38, 0, 101) 100%);
+}
+
+.container {
+  min-width: 450px;
+  z-index: 2;
+}
+
+.scores {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #ffbd00;
+  font-weight: 100;
+  font-size: 10px;
+  background: #9e0059;
+  border-radius: 0 0 10px 0;
+  padding-bottom: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.486);
+  border-right: 1px solid #ff0054;
+  border-bottom: 1px solid #ff0054;
+}
+.scores td, .scores th {
+  padding: 5px;
+  text-align: center;
+}
+.scores td {
+  font-weight: bold;
+}
+
+.wrapper {
+  width: 90%;
+  transition: all 1s;
+}
+
+.logo {
+  top: 30px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+.logo img {
+  width: 120px;
+  align-self: center;
+}
+.logo div {
+  padding-top: 20px;
+  text-align: center;
+  font-size: 10px;
+  color: #ff0054;
+}
+.logo div a,
+.logo div a:visited {
+  text-decoration: none;
+  font-weight: bold;
+  color: #ff5400;
+  padding: 2px 4px;
+  border-radius: 5px;
+  transition: all 0.5s;
+}
+.logo div a:hover {
+  color: #ffbd00;
+  background: #ff5400;
+  transition: all 0.5s;
+}
+
+.buttons-space {
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+.buttons-space h1 {
+  padding: 60px 0 20px 0;
+  color: #ff5400;
+  font-size: 40px;
+  text-align: center;
+}
+.buttons-space button {
+  color: #ffbd00;
+  background: #9e0059;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 19px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.501);
+  text-transform: uppercase;
+}
+.buttons-space button:hover {
+  transition: all 0.5s;
+  scale: 1.1;
+  transform: rotate(2deg);
+  color: white;
+}
+.buttons-space button:focus {
+  font-weight: bold;
+}
+.buttons-space #buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.description {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #ffbd00;
+  font-size: 12px;
+}
+
+@media screen and (max-width: 500px) {
+  #buttons {
+    flex-direction: col;
+  }
+  button {
+    width: 80%;
+  }
+  button:hover {
+    transition: all 0.5s;
+    scale: 0.9;
+    transform: rotate(5deg);
+    color: white;
+  }
+}
+#messages {
+  text-align: center;
+  padding-top: 50px;
+  font-size: 40px;
+  color: #ffbd00;
+}
+#messages div:nth-of-type(2) {
+  font-size: 18px;
+  padding-top: 5px;
+}
+
+.area {
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+}
+
+.circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.circles li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.116);
+  -webkit-animation: animate 25s linear infinite;
+          animation: animate 25s linear infinite;
+  bottom: -150px;
+}
+
+.circles li:nth-child(1) {
+  left: 25%;
+  width: 80px;
+  height: 80px;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.circles li:nth-child(2) {
+  left: 10%;
+  width: 20px;
+  height: 20px;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-duration: 12s;
+          animation-duration: 12s;
+}
+
+.circles li:nth-child(3) {
+  left: 70%;
+  width: 20px;
+  height: 20px;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+
+.circles li:nth-child(4) {
+  left: 40%;
+  width: 60px;
+  height: 60px;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-duration: 18s;
+          animation-duration: 18s;
+}
+
+.circles li:nth-child(5) {
+  left: 65%;
+  width: 20px;
+  height: 20px;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.circles li:nth-child(6) {
+  left: 75%;
+  width: 110px;
+  height: 110px;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+.circles li:nth-child(7) {
+  left: 35%;
+  width: 150px;
+  height: 150px;
+  -webkit-animation-delay: 7s;
+          animation-delay: 7s;
+}
+
+.circles li:nth-child(8) {
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  -webkit-animation-delay: 15s;
+          animation-delay: 15s;
+  -webkit-animation-duration: 45s;
+          animation-duration: 45s;
+}
+
+.circles li:nth-child(9) {
+  left: 20%;
+  width: 15px;
+  height: 15px;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-duration: 35s;
+          animation-duration: 35s;
+}
+
+.circles li:nth-child(10) {
+  left: 85%;
+  width: 150px;
+  height: 150px;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-duration: 11s;
+          animation-duration: 11s;
+}
+
+@-webkit-keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
+  }
+}/*# sourceMappingURL=style.css.map */

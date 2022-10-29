@@ -1,16 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Kamień, papier, nożyce</title>
-	<link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <title>Papier, Kamień, Nożyce - my first simple game.</title>
+    <link rel="stylesheet" href="css/background.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
-	<div class="container">
-		<div id="buttons"></div>
-		<div id="messages"></div>
-	</div>
-	<script src="js/functions.js"></script>
-	<script src="js/script.js"></script>
+
+    <div class="container buttons-space">
+        <div class="scores">
+            <table>
+                <th>Wygrane</th>
+                <th>Remisy</th>
+                <th>Przegrane</th>
+                <tr>
+                    <td id="win">0</td>
+                    <td id="draw">0</td>
+                    <td id="defeat">0</td>
+                </tr>
+            </table>
+        </div>
+        <div class="wrapper">
+            <div class="logo">
+                <img src="images/fabulous-scissors.png" alt="">
+                <div>Illustration by <a href="https://icons8.com/illustrations/author/zD2oqC8lLBBA">Icons 8</a> from <a
+                        href="https://icons8.com/illustrations">Ouch!</a></div>
+            </div>
+            <h1>Papier, Kamień, Nożyce</h1>
+            <div id="buttons">
+                <button id="button-rock">Kamień</button>
+                <button id="button-paper">Papier</button>
+                <button id="button-scissors">Nożyce</button>
+            </div>
+            <div id="messages">
+                <div>Witaj - spróbuj szczęścia ...</div>
+            </div>
+        </div>
+    </div>
+    <div class="description">Created by Mario</div>
+
+    <!-- Animated background. Source: https://speckyboy.com/css-javascript-animated-backgrounds/ -->
+
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <!-- <script src="js/script.js"></script> -->
+    <script src="js/functions.js"></script>
+    <script src="js/buttons.js"></script>
 </body>
+
 </html>
