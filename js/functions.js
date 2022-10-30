@@ -17,16 +17,14 @@ function clearMessages() {
     document.getElementById('messages').innerHTML = '';
 }
 
-
-
 function buttonClicked(argButtonName) {
     clearMessages();
     console.clear();
     argRandom = randomizer();
-    // console.log('buttonClicked - ' + argRandom);
-    let argComputerMove = getMoveName(argRandom);
+    console.log('buttonClicked - ' + argButtonName);
+    const argComputerMove = getMoveName(argRandom);
     // console.log('buttonClicked - argComputerMove: ' + argComputerMove);
-    console.log('buttonClicked - computers move: ' + argButtonName);
+    console.log('buttonClicked - computers move: ' + argComputerMove);
     displayResult(argButtonName, argComputerMove);
 }
 
@@ -43,7 +41,7 @@ function getMoveName(argMoveId) {
 
 /* Main method - display commentary and score on table */
 
-function displayResult(argPlayerMove, randomNumber) {
+function displayResult(argPlayerMove, argComputerMove) {
     // console.log('displayResult - uruchomiony!');
     // console.log('displayResults z argumentami: ' + argPlayerMove + ', ' + argComputerMove);
     if (argPlayerMove == 'papier' && argComputerMove == 'kamień' || argPlayerMove == 'kamień' && argComputerMove == 'nożyce' || argPlayerMove == 'nożyce' && argComputerMove == 'papier') {
