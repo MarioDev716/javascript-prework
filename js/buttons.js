@@ -1,6 +1,3 @@
-//Deklaracja zmiennych
-
-const buttonRock, buttonPaper, buttonScissors;
 
 // Funkcja akcji przycisków.
 
@@ -8,7 +5,7 @@ function buttonClick(argButtonName) {
     // console.log(argButtonName + ' został naciśnięty.');
 }
 
-buttonRock = document.getElementById('button-rock');
+const buttonRock = document.getElementById('button-rock');
 buttonRock.addEventListener('click', function () {
     buttonClick('Przycisk - Kamień');
     buttonClicked('kamień');
@@ -16,13 +13,13 @@ buttonRock.addEventListener('click', function () {
     // printMessage('Wciśnięto przycisk - Kamień');
 });
 
-buttonPaper = document.getElementById('button-paper');
+const buttonPaper = document.getElementById('button-paper');
 buttonPaper.addEventListener('click', function () {
     buttonClick('Przycisk - Papier');
     buttonClicked('papier');
 });
 
-buttonScissors = document.getElementById('button-scissors');
+const buttonScissors = document.getElementById('button-scissors');
 buttonScissors.addEventListener('click', function () {
     buttonClick('Przycisk - Nożyczki');
     buttonClicked('nożyce');

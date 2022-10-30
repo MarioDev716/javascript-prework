@@ -37,7 +37,7 @@ function getMoveName(argMoveId) {
 
 // Losowanie wyniku
 
-function displayResult(argPlayerMove, argRandom) {
+function displayResult(argPlayerMove, argComputerMove) {
     // console.log('displayResult - uruchomiony!');
     // console.log('displayResults z argumentami: ' + argPlayerMove + ', ' + argComputerMove);
     if (argPlayerMove == 'papier' && argComputerMove == 'kamień') {
@@ -72,13 +72,11 @@ function displayResult(argPlayerMove, argRandom) {
     printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
 }
 
-function randomizer(argRandom) {
-    const randomNumber = 0;
+function randomizer() {
+    const randomNumber;
     console.log('randomizer - uruchomiony!');
     randomNumber = Math.floor(Math.random() * 3 + 1);
-    return argRandom;
-    console.log('randomizer - argRandom: ' + argRandom);
-    // argComputerMove = getMoveName(randomNumber);
+    argComputerMove = getMoveName(randomNumber);
 }
 
 function scoreUpdate(argElement, argUpdate) {
