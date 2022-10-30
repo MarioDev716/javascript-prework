@@ -1,16 +1,13 @@
-
-// Funkcja akcji przycisków.
+/* Method for buttons actions */
 
 function buttonClick(argButtonName) {
-    // console.log(argButtonName + ' został naciśnięty.');
+    console.log(argButtonName + ' został naciśnięty.');
 }
 
 const buttonRock = document.getElementById('button-rock');
 buttonRock.addEventListener('click', function () {
     buttonClick('Przycisk - Kamień');
     buttonClicked('kamień');
-    // clearMessages();
-    // printMessage('Wciśnięto przycisk - Kamień');
 });
 
 const buttonPaper = document.getElementById('button-paper');
@@ -24,4 +21,3 @@ buttonScissors.addEventListener('click', function () {
     buttonClick('Przycisk - Nożyczki');
     buttonClicked('nożyce');
 });
-

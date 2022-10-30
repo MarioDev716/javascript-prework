@@ -1,9 +1,11 @@
-// Deklaracja zmiennych
+/* Declaration of variables */
+
 let argWin = 0;
 let argDraft = 0;
 let argDefeat = 0;
+let argRandom = 0;
 
-// Funkcja wyświetlająca komunikat odpowiedzi
+/* [IN PROGRESS] Funkcja wyświetlająca komunikat odpowiedzi */
 
 function printMessage(msg) {
     const div = document.createElement('div');
@@ -15,16 +17,20 @@ function clearMessages() {
     document.getElementById('messages').innerHTML = '';
 }
 
-// Funkcja losująca odpowiedź
+
 
 function buttonClicked(argButtonName) {
     clearMessages();
     console.clear();
-    randomizer();
+    argRandom = randomizer();
+    // console.log('buttonClicked - ' + argRandom);
+    let argComputerMove = getMoveName(argRandom);
+    // console.log('buttonClicked - argComputerMove: ' + argComputerMove);
+    console.log('buttonClicked - computers move: ' + argButtonName);
     displayResult(argButtonName, argComputerMove);
 }
 
-// Zamiana wyniku losowania na zmienną tekstową
+/* Change random number for text */
 
 function getMoveName(argMoveId) {
     if (argMoveId == 1) {
@@ -35,29 +41,18 @@ function getMoveName(argMoveId) {
     return 'nożyce';
 }
 
-// Losowanie wyniku
+/* Main method - display commentary and score on table */
 
-function displayResult(argPlayerMove, argRandom) {
+function displayResult(argPlayerMove, randomNumber) {
     // console.log('displayResult - uruchomiony!');
     // console.log('displayResults z argumentami: ' + argPlayerMove + ', ' + argComputerMove);
-    if (argPlayerMove == 'papier' && argComputerMove == 'kamień') {
+    if (argPlayerMove == 'papier' && argComputerMove == 'kamień' || argPlayerMove == 'kamień' && argComputerMove == 'nożyce' || argPlayerMove == 'nożyce' && argComputerMove == 'papier') {
         printMessage('Wygrywasz!');
         // console.log('Wygrywasz');
         argWin++;
         console.log('displayResult1 - argWin: ' + argWin);
         scoreUpdate('win', argWin);
-
-    } else if (argPlayerMove == 'kamień' && argComputerMove == 'nożyce') {
-        printMessage('Wygrywasz!');
-        argWin++;
-        console.log('displayResult2 - argWin: ' + argWin);
-        scoreUpdate('win', argWin);
-    } else if (argPlayerMove == 'nożyce' && argComputerMove == 'papier') {
-        printMessage('Wygrywasz!');
-        argWin++;
-        console.log('displayResult3 - argWin: ' + argWin);
-        scoreUpdate('win', argWin);
-    } else if (false) {} else if (argPlayerMove == argComputerMove) {
+    } else if (argPlayerMove == argComputerMove) {
         printMessage('Remis!');
         argDraft++;
         console.log('displayResult - argDraft: ' + argDraft);
@@ -72,17 +67,20 @@ function displayResult(argPlayerMove, argRandom) {
     printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
 }
 
-function randomizer(argRandom) {
-    const randomNumber = 0;
+/* Method randomizes computer movement */
+
+function randomizer() {
     console.log('randomizer - uruchomiony!');
-    randomNumber = Math.floor(Math.random() * 3 + 1);
-    return argRandom;
-    console.log('randomizer - argRandom: ' + argRandom);
+    const randomNumber = Math.floor(Math.random() * 3 + 1);
+    // console.log('randomizer - randomNumber: ' + randomNumber);
+    return randomNumber;
     // argComputerMove = getMoveName(randomNumber);
 }
 
+/* [IN PROGRESS] Method for display score on main table */
+
 function scoreUpdate(argElement, argUpdate) {
     console.log('scoreUpdate - uruchomiony!');
-    let divWin = document.getElementById(argElement);
+    const divWin = document.getElementById(argElement);
     divWin.textContent = argUpdate;
 }
