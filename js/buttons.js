@@ -1,6 +1,6 @@
 //Deklaracja zmiennych
 
-let buttonRock;
+const buttonRock, buttonPaper, buttonScissors;
 
 // Funkcja akcji przycisków.
 
