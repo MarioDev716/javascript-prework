@@ -1,11 +1,10 @@
 /* Declaration of variables */
 
-let argWin = 0;
-let argDraft = 0;
-let argDefeat = 0;
-let argRandom = 0;
+let win = 0;
+let draw = 0;
+let defeat = 0;
 
-/* [IN PROGRESS] Funkcja wyświetlająca komunikat odpowiedzi */
+/* Funkcja wyświetlająca komunikat odpowiedzi */
 
 function printMessage(msg) {
     const div = document.createElement('div');
@@ -20,9 +19,9 @@ function clearMessages() {
 function buttonClicked(argButtonName) {
     clearMessages();
     console.clear();
-    argRandom = randomizer();
+    const randomNumber = randomizer();
     console.log('buttonClicked - ' + argButtonName);
-    const argComputerMove = getMoveName(argRandom);
+    const argComputerMove = getMoveName(randomNumber);
     // console.log('buttonClicked - argComputerMove: ' + argComputerMove);
     console.log('buttonClicked - computers move: ' + argComputerMove);
     displayResult(argButtonName, argComputerMove);
@@ -42,24 +41,28 @@ function getMoveName(argMoveId) {
 /* Main method - display commentary and score on table */
 
 function displayResult(argPlayerMove, argComputerMove) {
-    // console.log('displayResult - uruchomiony!');
-    // console.log('displayResults z argumentami: ' + argPlayerMove + ', ' + argComputerMove);
     if (argPlayerMove == 'papier' && argComputerMove == 'kamień' || argPlayerMove == 'kamień' && argComputerMove == 'nożyce' || argPlayerMove == 'nożyce' && argComputerMove == 'papier') {
         printMessage('Wygrywasz!');
         // console.log('Wygrywasz');
-        argWin++;
-        console.log('displayResult1 - argWin: ' + argWin);
-        scoreUpdate('win', argWin);
+        win++;
+        console.log('displayResult1 - win: ' + win);
+        // scoreUpdate('win', win);
+        const divWin = document.getElementById('win');
+        divWin.textContent = win;
     } else if (argPlayerMove == argComputerMove) {
         printMessage('Remis!');
-        argDraft++;
-        console.log('displayResult - argDraft: ' + argDraft);
-        scoreUpdate('draw', argDraft);
+        draw++;
+        console.log('displayResult - draw: ' + draw);
+        // scoreUpdate('draw', draft);
+        const divDraw = document.getElementById('draw');
+        divDraw.textContent = draw;
     } else {
         printMessage('Przegrywasz');
-        argDefeat++;
-        console.log('displayResult - argDefeat: ' + argDefeat);
-        scoreUpdate('defeat', argDefeat);
+        defeat++;
+        console.log('displayResult - defeat: ' + defeat);
+        // scoreUpdate('defeat', defeat);
+        const divDefeat = document.getElementById('defeat');
+        divDefeat.textContent = defeat;
     }
     // clearMessages();
     printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
@@ -73,12 +76,4 @@ function randomizer() {
     // console.log('randomizer - randomNumber: ' + randomNumber);
     return randomNumber;
     // argComputerMove = getMoveName(randomNumber);
-}
-
-/* [IN PROGRESS] Method for display score on main table */
-
-function scoreUpdate(argElement, argUpdate) {
-    console.log('scoreUpdate - uruchomiony!');
-    const divWin = document.getElementById(argElement);
-    divWin.textContent = argUpdate;
 }
